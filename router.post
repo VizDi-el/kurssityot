@@ -1,0 +1,11 @@
+router.post('/', function(req, res, next) { 
+router.get('/:id', task_controller.task_details);
+router.get('/deletetask/:id', task_controller.task_delete_get);
+Task.addTask(req.body, function(err, count) { 
+if (err) { 
+res.json(err); 
+} else { 
+res.json(req.body); //or return count for 1 & 0 
+} 
+}); 
+});
